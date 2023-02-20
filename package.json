@@ -1,6 +1,6 @@
 {
   "name": "@tawasukha/urlcrypt",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -53,6 +53,7 @@
     }
   ],
   "devDependencies": {
+    "@tawasukha/crypt": "^0.1.0",
     "@size-limit/preset-small-lib": "^8.2.4",
     "@tsconfig/recommended": "^1.0.2",
     "@types/jest": "^29.4.0",
@@ -63,7 +64,7 @@
     "tslib": "^2.5.0",
     "typescript": "^4.9.5"
   },
-  "dependencies": {
-    "@tawasukha/crypt": "^0.1.0"
+  "peerDependencies": {
+    "@tawasukha/crypt": "*"
   }
 }
