@@ -11,7 +11,7 @@ export function encrypt(this: PatternOption, link: string) {
         const idx = this.chunks.indexOf(chunk)
         if (urlChunks[idx]) {
             const cipher = crypto.createCipheriv(this.algorithm, this.secret, null)
-            urlChunks[idx] = Buffer.concat([cipher.update(urlChunks[idx]), cipher.final()]).toString("hex");
+            urlChunks[idx] = Buffer.concat([cipher.update(urlChunks[idx]), cipher.final()]).toString("base64url");
         }
     })
 

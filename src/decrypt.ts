@@ -9,7 +9,7 @@ export function decrypt(this: PatternOption, link: string) {
         const idx = this.chunks.indexOf(chunk)
         if (urlChunks[idx]) {
             const decipher = crypto.createDecipheriv(this.algorithm, this.secret, null)
-            urlChunks[idx] = Buffer.concat([decipher.update(Buffer.from(urlChunks[idx], "hex")), decipher.final()]).toString("utf8");;
+            urlChunks[idx] = Buffer.concat([decipher.update(Buffer.from(urlChunks[idx], "base64url")), decipher.final()]).toString("utf8");;
         }
     })
 
