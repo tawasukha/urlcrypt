@@ -1,5 +1,4 @@
 import { PatternOption } from "./util/type";
-import crypto from "crypto"
 
 export function encrypt(this: PatternOption, link: string) {
     const url = new URL(link)
@@ -10,8 +9,7 @@ export function encrypt(this: PatternOption, link: string) {
     this.filter.forEach((chunk) => {
         const idx = this.chunks.indexOf(chunk)
         if (urlChunks[idx]) {
-            const cipher = crypto.createCipheriv(this.algorithm, this.secret, null)
-            urlChunks[idx] = Buffer.concat([cipher.update(urlChunks[idx]), cipher.final()]).toString("base64url");
+            urlChunks[idx] = this.crypto.encrypt(urlChunks[idx])
         }
     })
 

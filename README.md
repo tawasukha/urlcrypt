@@ -1,6 +1,6 @@
 # URL Crypt
 
-Library for encrypt and decrypt URL with zero dependency
+Library for encrypt and decrypt URL
 
 ## Installation
 

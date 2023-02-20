@@ -4,8 +4,10 @@ export type UrlCryptOption = {
 }
 
 export type PatternOption = {
+    crypto: {
+        encrypt: (text: string) => string
+        decrypt: (text: string) => string
+    }
     filter: string[]
     chunks: string[]
-    secret: Buffer
-    algorithm: string
 }
