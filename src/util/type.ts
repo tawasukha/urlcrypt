@@ -6,5 +6,6 @@ export type UrlCryptOption = {
 export type PatternOption = {
     filter: string[]
     chunks: string[]
-    secret: string
+    secret: Buffer
+    algorithm: string
 }

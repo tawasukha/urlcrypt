@@ -10,8 +10,8 @@ export function encrypt(this: PatternOption, link: string) {
     this.filter.forEach((chunk) => {
         const idx = this.chunks.indexOf(chunk)
         if (urlChunks[idx]) {
-            const hmac = crypto.createHmac("sha256", this.secret)
-            urlChunks[idx] = hmac.update(urlChunks[idx]).digest("hex")
+            const cipher = crypto.createCipheriv(this.algorithm, this.secret, null)
+            urlChunks[idx] = Buffer.concat([cipher.update(urlChunks[idx]), cipher.final()]).toString("hex");
         }
     })
 

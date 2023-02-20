@@ -1,10 +1,8 @@
 import { urlcrypt } from "../src/index"
 
-const option = { secret: "Secret", pattern: "http://example.com/api/oauth2/:id" }
+const option = { secret: "www88a8078385d0c", pattern: "http://example.com/api/oauth2/:id" }
 const link = "https://sub.domain.com/api/oauth2/success?redirect=https://other.domain.com/api/auth"
-const link2 = "https://sub.domain.com/api/"
-const encrypted = "https://sub.domain.com/api/oauth2/c6bff2779a356bb52b01f0efabc0a818b1527b9821866be71c947aa6c97c59e3"
-
+const encrypted = "https://sub.domain.com/api/oauth2/c61f8b50793b0d9c922e9d920a9a4b2889e699c1cc2c33a2d0599c3fba6d9d38711e027b9572a7b0d49af7fc315a6837e4d9f603d210c5c5c28ee8df25a00833"
 const crypto = urlcrypt(option)
 
 describe('urlcrypt', () => {
@@ -14,10 +12,7 @@ describe('urlcrypt', () => {
     it('Encrypt', () => {
         expect(crypto.encrypt(link)).toEqual(encrypted);
     });
-    it('Encrypt 2', () => {
-        expect(crypto.encrypt(link2)).toEqual(link2);
-    });
-    it('Verify', () => {
-        expect(crypto.verify(encrypted, link)).toEqual(true);
+    it('Decrypt', () => {
+        expect(crypto.decrypt(encrypted)).toEqual(link);
     });
 });

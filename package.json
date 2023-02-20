@@ -1,7 +1,14 @@
 {
   "name": "@tawasukha/urlcrypt",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tawasukha/urlcrypt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tawasukha/urlcrypt/issues"
+  },
   "author": "Forte Zhuo",
   "main": "dist/index.js",
   "module": "dist/urlcrypt.esm.js",

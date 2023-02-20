@@ -1,6 +1,6 @@
 # URL Crypt
 
-Library for encrypt and verify URL
+Library for encrypt and decrypt URL with zero dependency
 
 ## Installation
 
@@ -14,16 +14,17 @@ pnpm add @tawasukha/urlcrypt
 import { urlcrypt } from "@tawasukha/urlcrypt"
 
 const crypto = urlcrypt({
-  secret: "Secret", 
+  secret: "www88a8078385d0c", 
   pattern: "http://example.com/api/auth/:id"
 })
 const link = "https://sub.domain.com/api/oauth2/secret_path?secretparam=secretvalue"
 
 const encrypted = crypto.encrypt(link)
-console.log(crypto.verify(encrypted,link))
+const decrypted = crypto.decrypt(encrypted)
+console.log("encrypted",ecrypted)
+console.log("decrypted",decrypted)
 ```
 
 ## Inspired from
 
 -   [Crypto Urls](https://github.com/web-slate/crypto-urls)
--   [Url Encrypt](https://github.com/manvel-khnkoyan/url-encrypt/)
